@@ -1,0 +1,126 @@
+﻿@model IEnumerable<baitapltw.Models.Product>
+
+@{
+    ViewBag.Title = "Trang Chu";
+}
+@using System.Globalization;
+
+
+<table class="table">
+    <div class="design_section layout_padding">
+        <div id="my_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <h1 class="design_taital">NỘI THẤT KC</h1>
+                        <p class="design_text">CHUYÊN CUNG CẤP ĐỒ NỘI THẤT CAO CẤP</p>
+                        <div class="design_section_2">
+                            <div class="row">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="col-md-4">
+                                        <div class="box_main">
+                                            <p class="chair_text">@item.Title</p>
+                                            <div class="image_3" href="#">
+                                                <a href="/Product/Details/@item.Id">
+                                                    <img src="@item.FeatureImage">
+                                                </a>
+                                            </div>
+                                            <p class="chair_text">Price: @string.Format(new CultureInfo("vi-VN", false), "{0:c0}", item.Price)</p>
+                                            <p class="chair_text">Price: @baitapltw.Ultils.Ultils.NumberToText((double)item.Price)</p>
+                                            <div class="buy_bt"><a href="#">Mua Ngay</a></div>
+                                            <div class="buy_bt"><a href="/Product/AddCart/@item.Id">Gio Hang</a></div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <h1 class="design_taital">NỘI THẤT KC</h1>
+                        <p class="design_text">CHUYÊN CUNG CẤP ĐỒ NỘI THẤT CAO CẤP</p>
+                        <div class="design_section_2">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="box_main">
+                                        <p class="chair_text">GHẾ GỖ</p>
+                                        <div class="image_3" href="#">
+                                            <img src="~/Content/NoiThat/images/img-3.png">
+                                        </div>
+                                        <p class="chair_text">Price $100</p>
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box_main">
+                                        <p class="chair_text">GHẾ GỖ</p>
+                                        <div class="image_3" href="#"><img src="~/Content/NoiThat/images/img-3.png"></div>
+                                        <p class="chair_text">Price $150</p>
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box_main">
+                                        <p class="chair_text">GHẾ GỖ</p>
+                                        <div class="image_3" href="#"><img src="~/Content/NoiThat/images/img-3.png"></div>
+                                        <p class="chair_text">Price $200</p>
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <h1 class="design_taital">Nhà sách Củ Chi</h1>
+                        <p class="design_text">Một cuốn sách hay cho ta một điều tốt, một người bạn tốt cho ta một điều hay</p>
+                        <div class="design_section_2">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="box_main">
+                                        <p class="chair_text">Kinh dị</p>
+                                        <div class="image_3" href="#"><img src="Content/NoiThat/images/sach2.jpg"></div>
+                                        <p class="chair_text">Price $300</p>
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box_main">
+                                        <p class="chair_text">Kinh dị</p>
+                                        <div class="image_3" href="#"><img src="Content/NoiThat/images/sach4.jpg"></div>
+                                        <p class="chair_text">Price $400</p>
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box_main">
+                                        <p class="chair_text">Hài</p>
+                                        <div class="image_3" href="#"><img src="~/Content/NoiThat/images/sach5.jpg"></div>
+                                        <p class="chair_text">Price $500</p>
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                <i class="fa fa-long-arrow-left" style="font-size:24px"></i>
+            </a>
+            <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                <i class="fa fa-long-arrow-right" style="font-size:24px"></i>
+            </a>
+        </div>
+        <div class="container">
+            <div class="read_bt"><a href="#">Read More</a></div>
+        </div>
+    </div>
+
+</table>
+<a href="~/Admin">Admin click here</a>
+
+
